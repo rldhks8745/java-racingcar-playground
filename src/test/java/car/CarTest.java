@@ -18,8 +18,12 @@ public class CarTest {
     @Test
     @DisplayName("차이름 toString")
     void CarToStringTest() {
-        assertThat(new Car("tank", 1).toString()).isEqualTo("tank : -");
-        assertThat(new Car("spark", 3).toString()).isEqualTo("spark : ---");
+        Car car = new Car("tank");
+        car.move();
+        assertThat(car.toString()).isEqualTo("tank : -");
+        car.move();
+        car.move();
+        assertThat(car.toString()).isEqualTo("tank : ---");
     }
 
     @Test

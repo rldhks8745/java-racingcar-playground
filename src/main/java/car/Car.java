@@ -8,17 +8,13 @@ public class Car {
     private final CarPosition position;
 
     public Car(String name) {
-        this(name, 0);
-    }
-
-    public Car(String name, int position) {
         this.name = new CarName(name);
-        this.position = new CarPosition(position);
+        this.position = new CarPosition(0);
     }
 
     @Override
     public String toString() {
-        return String.format("%s : %s", name.toString(), position.toString());
+        return String.format("%s : %s", name, position);
     }
 
     public void move() {
