@@ -25,12 +25,4 @@ public class CarTest {
         car.move();
         assertThat(car.toString()).isEqualTo("tank : ---");
     }
-
-    @Test
-    @DisplayName("차 isGoal 테스트")
-    void CarMoveTest() {
-        Car car = new Car("tank");
-        car.move();
-        assertThat(car.isGoal(1)).isTrue();
-    }
 }
