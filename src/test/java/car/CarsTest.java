@@ -34,7 +34,9 @@ public class CarsTest {
     @DisplayName("canMoveArray에 해당하는 index 값이 true 일 경우 index에 맞는 car를 움직이는 테스트")
     void moveTest() {
         Cars cars = new Cars(carNames);
-        cars.move(Arrays.asList(true, false, true));
+        cars.move(0, true);
+        cars.move(1, false);
+        cars.move(2, true);
 
         assertThat(cars.get(0).toString()).isEqualTo("pobi : -");
         assertThat(cars.get(1).toString()).isEqualTo("crong : ");
