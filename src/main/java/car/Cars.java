@@ -27,14 +27,6 @@ public class Cars {
         return cars.size();
     }
 
-    public void move(List<Boolean> canMoveList) {
-        if (canMoveList == null || canMoveList.size() != this.size())
-            throw new RuntimeException("canMoveArray 길이 값이 자동차 수와 일치하지 않습니다.");
-
-        IntStream.range(0, canMoveList.size())
-                .forEach((index) -> move(index, canMoveList.get(index)));
-    }
-
     public void move(int index, boolean canMove) {
         if (canMove)
             get(index).move();
