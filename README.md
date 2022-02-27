@@ -16,12 +16,11 @@
 
 4. 전진하는 조건은 0에서 9 사이에서 random 값을 구한 후 random 값이 4이상일 경우이다.
 - [ ✔ ] public CarStatus Car.move();
-- [ ✔ ] public boolean isGoal(int goalPosition);
-- Cars.move(List<Boolean> canMoveList);
-- public void Cars.move(int index, boolean canMove)
+~~- Cars.move(List<Boolean> canMoveList);~~
+- [ ✔ ] public void Cars.move(int index, boolean canMove)
 
 5. 자동차 경주 게임을 완료한 후 누가 우승했는지를 알려준다. 우승자는 한명 이상일 수 있다.
-- private void showWinners(List<Car> cars);
+- [ ✔ ] public void showWinners();
 
 ## 실행 결과
 위 요구사항에 따라 3대의 자동차가 5번 움직였을 경우 프로그램을 실행한 결과는 다음과 같다.
