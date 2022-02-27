@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Cars {
     public static final String DELIMITER = ",";
@@ -34,5 +35,41 @@ public class Cars {
 
     public Car get(int index) {
         return cars.get(index);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        cars.forEach(car -> {
+            sb.append(car);
+            sb.append('\n');
+        });
+        return sb.toString();
+    }
+
+    public String showWinners() {
+        StringBuilder sb = new StringBuilder();
+        Car winnerPositionCar = cars.stream().max(Car::compareTo).get();
+        List<Car> winnerList = cars.stream()
+                .filter(winnerPositionCar::isSamePosition)
+                .collect(Collectors.toList());
+
+        for (int i=0; i<winnerList.size(); i++) {
+            sb.append(winnerList.get(i).getName());
+            sb.append(appendDelimiter(isLastWinner(i, winnerList.size())));
+        }
+
+        return sb.append("가 최종 우승했습니다.").toString();
+    }
+
+    private boolean isLastWinner(int index, int size) {
+        return index < size - 1;
+    }
+
+    private String appendDelimiter(boolean hasDelimiter) {
+        if (hasDelimiter)
+            return ", ";
+
+        return "";
     }
 }
